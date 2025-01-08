@@ -17,7 +17,7 @@ const OrdersList: React.FC = () => {
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/orders')
+    fetch('/api/orders')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
