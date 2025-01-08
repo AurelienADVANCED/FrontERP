@@ -7,7 +7,7 @@ function App() {
       {/* Barre de navigation supérieure */}
       <header className="erp-header">
         <div className="header-left">
-          <img src="/src/assets/logo-clear.png" alt="Logo" className="header-logo" />
+          <img src="logo-clear.png" alt="Logo" className="header-logo" />
           <h1 className="header-title">DUBETON ERP</h1>
         </div>
         <div className="header-right">
