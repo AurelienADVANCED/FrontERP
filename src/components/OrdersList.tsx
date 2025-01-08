@@ -1,4 +1,3 @@
-// OrdersList.tsx
 import React, { useEffect, useState } from 'react';
 import './OrdersList.css';
 
@@ -15,9 +14,10 @@ interface Order {
 
 const OrdersList: React.FC = () => {
   const [orders, setOrders] = useState<Order[]>([]);
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    fetch('/api/orders')
+    fetch(`${apiUrl}/api/orders`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
@@ -30,7 +30,7 @@ const OrdersList: React.FC = () => {
       .catch(error => {
         console.error('Il y a eu un problème avec votre requête fetch:', error);
       });
-  }, []);
+  }, [apiUrl]);
 
   return (
     <div>
